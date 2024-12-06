@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/payment.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles/reset.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Payment Form</title>
+</head>
+
+<body>
+  <div class="card order">
+    <header class="card__head container">
+      <h1 class="order__heading">Harold Finch
+        <span class="order__text">Your Total</span>
+      </h1>
+      <div class="order__total">88</div>
+    </header>
+    <form class="card__form payment form container">
+      <label class="field col-12" for="card">
+        <span class="field__title">Credit card number</span>
+        <input type="text" class="field__input" id="card" name="card">
+      </label>
+      <label for="month" class="field col-8">
+        <span class="field__title">Expiration date</span>
+        <select class="field__input" id="month" name="month">
+          <option value="Month">Month</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+      </label>
+      <label for="year" class="field col-4">
+        <select class="field__input" id="year" name="year">
+          <option value="Year">Year</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+          <option value="2031">2031</option>
+          <option value="2032">2032</option>
+        </select>
+      </label>
+      <label class="field col-12" for="cvv">
+        <span class="field__title">CVV</span>
+        <input type="number" class="field__input col-4" id="cvv" name="cvv">
+        <p class="col-8 field__hint">3 or 4 digits - <button type="button" class="card__btn">view
+            example</button></p>
+      </label>
+      <button class="payment__btn col-12">Pay</button>
+    </form>
+    <footer class="card__footer container">
+      <button type="button" class="card__btn">Cancel order</button>
+    </footer>
+  </div>
+  <script>
+    const hintBtn = document.querySelector('.field__hint button');
+    const hintInput = document.querySelector('[name="cvv"]');
+    const cardInput = document.querySelector('[name = "card"]');
+    let cardValue = '';
+    cardInput.addEventListener('input', (e) => {
+      const input = e.target;
+      let caretPosition = input.selectionStart;
+      let currentValue = input.value.replace(/[^\d]/g, '');
+      currentValue = currentValue.length > 16 ? currentValue.slice(0, 16) : currentValue;
+      input.value = currentValue.padEnd(16, '_').replace(/\B(?=((_|\d){4})+(?!(_|\d)))/g, " ");
+      if (input.value[caretPosition] === ' ' && cardValue !== currentValue) {
+        caretPosition++;
+      }
+      if (cardValue === currentValue) {
+        caretPosition--;
+      }
+      cardValue = currentValue;
+      input.selectionStart = input.selectionEnd = caretPosition;
+    });
+
+    hintBtn.addEventListener('click', (e) => {
+      const MINCVV = 100;
+      const MAXCVV = 9999;
+
+      hintInput.placeholder = Math.floor(Math.random() * (MAXCVV - MINCVV + 1) + MINCVV);
+    });
+  </script>
+</body>
+
+</html>

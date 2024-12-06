@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/daily.png">
+  <link rel="stylesheet" href="../assets/styles/reset.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Daily Form</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card__front">
+      <header class="card__head">
+        <h1 class="card__title">Create your free account</h1>
+        <div class="card__info">Come and join our cool and amazing community, fill in your details
+          to get started. Already have an account? <button type="button" class="card__btn" id="login">Log in.</button>
+        </div>
+      </header>
+      <form class="card__form form">
+        <input type="text" placeholder="First name" class="form__input form__input--w-50">
+        <input type="text" placeholder="Last name" class="form__input form__input--w-50">
+        <input type="email" placeholder="Email address" class="form__input">
+        <input type="text" placeholder="Password" class="form__input">
+        <button class="form__btn">Sign up for free</button>
+      </form>
+      <footer class="card__footer">
+        <p>By clicking on “Sign up for free”, you agree to the <a href="#" class="card__link">Terms of
+            Service</a> and the <a href="#" class="card__link">Privacy Policy</a></p>
+      </footer>
+    </div>
+    <div class="card__back">
+      <header class="card__head">
+        <h1 class="card__title">Login to your account</h1>
+        <div class="card__info">Don't have an account yet? <button type="button" class="card__btn" id="signup">Sign
+            Up.</button>
+        </div>
+      </header>
+      <form class="card__form form">
+        <input type="email" placeholder="Email address" class="form__input">
+        <input type="text" placeholder="Password" class="form__input">
+        <button class="form__btn">Login</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const loginFormHandler = document.querySelector('#login');
+    const signupFormHandler = document.querySelector('#signup');
+    const card = document.querySelector('.card');
+
+    loginFormHandler.addEventListener('click', () => {
+      card.classList.add('login');
+    });
+
+    signupFormHandler.addEventListener('click', () => {
+      card.classList.remove('login');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+body {
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(59deg, #bac5db 0%, #bac5db 100%) #bac5db;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  max-width: 670px;
+  width: 95%;
+  position: relative;
+  padding: 80px 60px 60px;
+  color: #ffffff;
+  background-color: #353a45;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 26px 49px rgba(35, 70, 133, 0.28);
+}
+
+dialog::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 92px;
+  height: 92px;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.13);
+  border-radius: 50%;
+  background: url("../images/letter.png") 50% 50% no-repeat, linear-gradient(59deg, #47aae6 0%, #9372bf 100%);
+  transform: translate(-50%, -50%);
+}
+
+.dialog__head {
+  text-align: center;
+}
+
+.dialog__title {
+  color: #538fff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.dialog__subtitle {
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+
+.dialog__form {
+  display: flex;
+  align-items: stretch;
+  gap: 25px 15px;
+  margin-bottom: 30px;
+}
+
+.dialog__input {
+  width: 60%;
+  font-size: 20px;
+  padding: 12px 18px;
+  color: #1b1c1d;
+  background-color: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.dialog__btn {
+  width: 40%;
+  font-size: 18px;
+  padding: 12px 18px;
+  color: #ffffff;
+  background-color: #538fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #8b77c4;
+  }
+}
+
+.dialog__text {
+  font-style: italic;
+  color: #787d87;
+  text-align: center;
+}
+
+.dialog__close {
+  position: absolute;
+  font-size: 0;
+  width: 34px;
+  height: 34px;
+  top: 12px;
+  right: 12px;
+  background: url("../images/close.png") no-repeat;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 2px 0 rgba(139, 119, 196, 0.7);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .dialog {
+    padding: 80px 20px 60px;
+  }
+
+  .dialog__title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .dialog__subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .dialog__form {
+    flex-wrap: wrap;
+  }
+
+  .dialog__input,
+  .dialog__btn {
+    width: 100%;
+    font-size: 16px;
+  }
+
+}

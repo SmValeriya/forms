@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/sign-in.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles/reset.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Sign in Form</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="#" class="breadcrumbs__link breadcrumbs__link--active">Sign in</a>
+        <a href="#" class="breadcrumbs__link">Join us</a>
+      </nav>
+      <form class="form">
+        <label class="field" for="username">
+          <span class="field__name">Username</span>
+          <input type="text" name="username" id="username" class="field__control">
+        </label>
+        <label class="field" for="password">
+          <span class="field__name">Password</span>
+          <input type="password" id="password" name="password" class="field__control">
+        </label>
+        <label class="checkbox" for="signedin">
+          <input type="checkbox" id="signedin" name="signedin" class="checkbox__control">
+          <span class="checkbox__text">Keep me signed in</span>
+        </label>
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+      <footer class="footer">
+        <a href="#" class="footer__link">Forgot password</a>
+        <a href="#" class="footer__link">Create an account</a>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
